@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">LTDD</string>
+    <string name="btnTenDangNhap">Đăng Nhập</string>
+    <string name="btnQuenMatKhau">Quên Mật Khẩu</string>
+    <string name="btnDangKy">Đăng Ký</string>
+    <string name="btnDangKy_DK">Đăng Ký</string>
+    <string name="btnLayLaiMatKhau">Lấy Lại Mật Khẩu</string>
+    <string name="btnShop">Shop Credit</string>
+    <string name="btnLichSu">Lịch Sử Chơi Game</string>
+    <string name="btnBangXepHang">Bảng Xếp Hạng</string>
+    <string name="btnChoi">Vào Game</string>
+    <string name="btnTaiKhoan">Tài Khoản Người Chơi</string>
+</resources>

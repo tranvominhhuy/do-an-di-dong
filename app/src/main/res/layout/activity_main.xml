@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnQuenMatKhau"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#9C27B0"
+        android:text="@string/btnQuenMatKhau"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edtMatKhau"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edtMatKhau"
+        app:layout_constraintTop_toBottomOf="@+id/btnDangNhap"
+        android:onClick="QuenMatKhau"
+        />
+
+    <Button
+        android:id="@+id/btnDangKy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#C2174F"
+        android:text="@string/btnDangKy"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edtMatKhau"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtMatKhau"
+        app:layout_constraintTop_toBottomOf="@+id/btnQuenMatKhau"
+        android:onClick="DangKy"
+        />
+
+    <ImageView
+        android:id="@+id/imvLoGo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/txtTenDangNhap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/bg_txt"
+        android:ems="10"
+        android:hint="Tên Đăng Nhập"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imvLoGo" />
+
+    <EditText
+        android:id="@+id/edtMatKhau"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_txt"
+        android:ems="10"
+        android:hint="Mật Khẩu"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtTenDangNhap"
+        app:layout_constraintStart_toStartOf="@+id/txtTenDangNhap"
+        app:layout_constraintTop_toBottomOf="@+id/txtTenDangNhap" />
+
+    <Button
+        android:id="@+id/btnDangNhap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#00B0FF"
+        android:text="@string/btnTenDangNhap"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edtMatKhau"
+        app:layout_constraintStart_toStartOf="@+id/edtMatKhau"
+        app:layout_constraintTop_toBottomOf="@+id/edtMatKhau"
+        android:onClick="DangNhap"
+        />
+
+    <TextView
+        android:id="@+id/txtGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#FF1200"
+        android:text="G      Google"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtFacebook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#3D5AFE"
+        android:text="F      Facebook"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtGoogle"
+        app:layout_constraintEnd_toEndOf="@+id/txtGoogle"
+        app:layout_constraintStart_toStartOf="@+id/txtGoogle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

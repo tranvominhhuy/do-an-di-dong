@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangTaiKhoan">
+
+    <ImageView
+        android:id="@+id/imgLoGo_TK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/txtTenTaikhoan_TK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/bg_txt"
+        android:hint="Tên Đăng Nhập"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLoGo_TK" />
+
+    <EditText
+        android:id="@+id/txtEmail_TK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_txt"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtTenTaikhoan_TK"
+        app:layout_constraintStart_toStartOf="@+id/txtTenTaikhoan_TK"
+        app:layout_constraintTop_toBottomOf="@+id/txtTenTaikhoan_TK" />
+
+    <EditText
+        android:id="@+id/txtMatKhau_TK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_txt"
+        android:hint="Mật Khẩu Mới"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtEmail_TK"
+        app:layout_constraintStart_toStartOf="@+id/txtEmail_TK"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail_TK" />
+
+    <EditText
+        android:id="@+id/txtXacNhanMatKhau_TK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_txt"
+        android:hint="Xác Nhận Mật Khẩu Mới"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtMatKhau_TK"
+        app:layout_constraintStart_toStartOf="@+id/txtMatKhau_TK"
+        app:layout_constraintTop_toBottomOf="@+id/txtMatKhau_TK" />
+
+    <Button
+        android:id="@+id/btnCapNhat_TK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#F5450D"
+        android:text="Cập Nhật"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtXacNhanMatKhau_TK"
+        app:layout_constraintStart_toStartOf="@+id/txtXacNhanMatKhau_TK"
+        app:layout_constraintTop_toBottomOf="@+id/txtXacNhanMatKhau_TK"
+        android:onClick="CapNhat"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

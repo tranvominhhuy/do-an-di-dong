@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangChu">
+
+    <ImageView
+        android:id="@+id/imvLoGo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/txtTenDangNhap"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imvLoGo" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="61dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTenDangNhap"
+        app:srcCompat="@drawable/ruby" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="64dp"
+        android:text="2000"
+        android:textColor="#F02222"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btnTaiKhoan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        android:background="#FFC107"
+        android:text="@string/btnTaiKhoan"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:onClick="TaiKhoan"
+        />
+
+    <Button
+        android:id="@+id/btnGame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#E91E63"
+        android:text="@string/btnChoi"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnTaiKhoan"
+        app:layout_constraintStart_toStartOf="@+id/btnTaiKhoan"
+        app:layout_constraintTop_toBottomOf="@+id/btnTaiKhoan"
+        android:onClick="VaoGame"/>
+
+    <Button
+        android:id="@+id/btnLichSu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#673AB7"
+        android:text="@string/btnLichSu"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnGame"
+        app:layout_constraintStart_toStartOf="@+id/btnGame"
+        app:layout_constraintTop_toBottomOf="@+id/btnGame"
+        android:onClick="LichSu"
+        />
+
+    <Button
+        android:id="@+id/btnBangXepHang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#9C27B0"
+        android:text="@string/btnBangXepHang"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnLichSu"
+        app:layout_constraintStart_toStartOf="@+id/btnLichSu"
+        app:layout_constraintTop_toBottomOf="@+id/btnLichSu"
+        android:onClick="BangXepHang"
+        />
+
+    <Button
+        android:id="@+id/btnShop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FF5722"
+        android:onClick="Shop"
+        android:text="@string/btnShop"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnBangXepHang"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnBangXepHang"
+        app:layout_constraintTop_toBottomOf="@+id/btnBangXepHang" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

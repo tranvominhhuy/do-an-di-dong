@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangTraLoiCauHoi">
+
+    <ImageView
+        android:id="@+id/imgTim1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tim" />
+
+    <ImageView
+        android:id="@+id/imgTim2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@+id/imgTim1"
+        app:layout_constraintTop_toTopOf="@+id/imgTim1"
+        app:srcCompat="@drawable/tim" />
+
+    <ImageView
+        android:id="@+id/imgTim3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@+id/imgTim2"
+        app:layout_constraintTop_toTopOf="@+id/imgTim2"
+        app:srcCompat="@drawable/tim" />
+
+    <ImageView
+        android:id="@+id/imgTim4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@+id/imgTim3"
+        app:layout_constraintTop_toTopOf="@+id/imgTim3"
+        app:srcCompat="@drawable/tim" />
+
+    <ImageView
+        android:id="@+id/imgTim5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@+id/imgTim4"
+        app:layout_constraintTop_toTopOf="@+id/imgTim4"
+        app:srcCompat="@drawable/tim" />
+
+    <TextView
+        android:id="@+id/txtDiem_TL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:text="Điểm:"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgTim3" />
+
+    <TextView
+        android:id="@+id/txt0_TL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtDiem_TL"
+        app:layout_constraintTop_toTopOf="@+id/txtDiem_TL" />
+
+    <TextView
+        android:id="@+id/txtCauHoi_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="128dp"
+        android:background="#FF3D00"
+        android:text="Câu Hỏi"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiem_TL" />
+
+    <TextView
+        android:id="@+id/txtSo_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FF3D00"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtCauHoi_TL"
+        app:layout_constraintStart_toStartOf="@+id/txtCauHoi_TL"
+        app:layout_constraintTop_toBottomOf="@+id/txtCauHoi_TL" />
+
+    <TextView
+        android:id="@+id/txtDe_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSo_TL" />
+
+    <Button
+        android:id="@+id/btnDapAnA_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDe_TL" />
+
+    <Button
+        android:id="@+id/btnDapAnB_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnDapAnA_TL"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnDapAnA_TL"
+        app:layout_constraintTop_toBottomOf="@+id/btnDapAnA_TL" />
+
+    <Button
+        android:id="@+id/btnDapAnC_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnDapAnB_TL"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnDapAnB_TL"
+        app:layout_constraintTop_toBottomOf="@+id/btnDapAnB_TL" />
+
+    <Button
+        android:id="@+id/btnDapAnD_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnDapAnC_TL"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnDapAnC_TL"
+        app:layout_constraintTop_toBottomOf="@+id/btnDapAnC_TL" />
+
+    <ImageView
+        android:id="@+id/imgCredit_TL"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ruby" />
+
+    <TextView
+        android:id="@+id/txtCredit_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="#FF6242"
+        android:text="2000"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imgCredit_TL"
+        app:layout_constraintStart_toEndOf="@+id/imgTim5"
+        app:layout_constraintTop_toTopOf="@+id/imgCredit_TL" />
+
+    <TextView
+        android:id="@+id/txtTenDangNhap_TL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtCredit_TL"
+        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintStart_toStartOf="@+id/txtCredit_TL"
+        app:layout_constraintTop_toBottomOf="@+id/txtCredit_TL" />
+
+    <ProgressBar
+        android:id="@+id/ThoiGian_TL"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnDapAnD_TL"
+        app:layout_constraintStart_toStartOf="@+id/btnDapAnD_TL"
+        app:layout_constraintTop_toBottomOf="@+id/btnDapAnD_TL" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

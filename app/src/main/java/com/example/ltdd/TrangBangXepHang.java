@@ -14,6 +14,11 @@ import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -102,16 +107,55 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return null;
+        int page = 1;
+        int limit = 25;
+        if(args!=null){
+            page= args.getInt("page");
+            limit = args.getInt("limit");
+        }
+        return new BangXepHangLoader(this,page,limit);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        Log.d("data",data);
+        try {
+            if(data == null){
+                taoThongBao("Không thể kết nối server").show();
+                return;
+            }
+            JSONObject jsonObject = new JSONObject(data);
+            int total = jsonObject.getInt("total");
+            totalPage = total / PAGE_SIZE;
+            if(total % PAGE_SIZE!=0)
+            {
+                totalPage++;
+            }
+            JSONArray itemsArray = jsonObject.getJSONArray("data");
+            if(mListNguoiChoi.size()>0){
+                mListNguoiChoi.remove(mListNguoiChoi.size() - 1);
+                int scrollPosition = mListNguoiChoi.size();
+                bangXepHangAdapter.notifyItemInserted(scrollPosition);
+            }
+            for(int i=0; i<itemsArray.length();i++){
+                int id = itemsArray.getJSONObject(i).getInt("id");
+                String tenDangNhap= itemsArray.getJSONObject(i).getString("ten_dang_nhap");
+                int diem = itemsArray.getJSONObject(i).getInt("diem_cao_nhat");
+                mListNguoiChoi.add(new NguoiChoi(id,tenDangNhap,diem));
+            }
+            bangXepHangAdapter.notifyDataSetChanged();
 
+            isLoading= false;
+            isLastPage = (currentPage==totalPage);
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
+
 
     }
 }

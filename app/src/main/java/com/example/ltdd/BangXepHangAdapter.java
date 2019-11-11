@@ -18,7 +18,6 @@ public class BangXepHangAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private final ArrayList<NguoiChoi> mListNguoiChoi;
     private final LayoutInflater inflater ;
     private final Context context;
-
     public BangXepHangAdapter(ArrayList<NguoiChoi> mListNguoiChoi, Context context) {
         this.mListNguoiChoi = mListNguoiChoi;
         this.inflater= LayoutInflater.from(context);

@@ -73,7 +73,7 @@ public class BangXepHangAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
     void hienThiThongTin(NguoiChoiViewHolder holder,int position){
         NguoiChoi nguoiChoi = this.mListNguoiChoi.get(position);
-        holder.tenDangNhapTextView.setText(nguoiChoi.getTenDangNhap());
+        holder.tenDangNhapTextView.setText(position+1 + ":   " + nguoiChoi.getTenDangNhap());
         holder.diemCaoNhatTextView.setText(nguoiChoi.getDiemCaoNhat()+"");
     }
     void hienThiProgressBar(LoadingViewHolder holder)

@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class TrangBangXepHang extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<String> {
-    private final static ArrayList<NguoiChoi> mListNguoiChoi = new ArrayList<>();
+    private ArrayList<NguoiChoi> mListNguoiChoi;
     private BangXepHangAdapter bangXepHangAdapter;
     private RecyclerView mRecyclerView;
     private static final int PAGE_SIZE = 25;
@@ -33,10 +33,11 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
     private boolean isLoading = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_bang_xep_hang);
         this.mRecyclerView = findViewById(R.id.rcv_bang_xep_hang);
+        mListNguoiChoi = new ArrayList<>();
         this.bangXepHangAdapter = new BangXepHangAdapter(mListNguoiChoi,this);
         this.mRecyclerView.setAdapter(bangXepHangAdapter);
         this.mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

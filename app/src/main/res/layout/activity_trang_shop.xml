@@ -59,14 +59,13 @@
         app:layout_constraintTop_toTopOf="@+id/imgCredit_Shop" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txtCredit1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="200dp"
         android:background="#A88935"
-        android:text="$450 = 5.000"
         android:textAlignment="center"
         android:textColor="#FFEA00"
         android:textSize="30sp"
@@ -86,23 +85,23 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toTopOf="@+id/textView12" />
+        app:layout_constraintStart_toEndOf="@+id/txtCredit1"
+        app:layout_constraintTop_toTopOf="@+id/txtCredit1"
+        android:onClick="MuaCredit1"/>
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/txtCredit2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="$290 = 3.000"
         android:background="#A88935"
         android:textAlignment="center"
         android:textColor="#FFEA00"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintEnd_toEndOf="@+id/txtCredit1"
+        app:layout_constraintStart_toStartOf="@+id/txtCredit1"
+        app:layout_constraintTop_toBottomOf="@+id/txtCredit1" />
 
     <Button
         android:id="@+id/btnMua2"
@@ -115,38 +114,39 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/textView13" />
+        app:layout_constraintStart_toEndOf="@+id/txtCredit2"
+        app:layout_constraintTop_toTopOf="@+id/txtCredit2"
+        android:onClick="MuaCredit2"
+        />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/txtCredit3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="$95 = 1.000"
         android:background="#A88935"
         android:textAlignment="center"
         android:textColor="#FFEA00"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintEnd_toEndOf="@+id/txtCredit2"
+        app:layout_constraintStart_toStartOf="@+id/txtCredit2"
+        app:layout_constraintTop_toBottomOf="@+id/txtCredit2"
+        />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/txtCredit4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="$50 = 500"
         android:background="#A88935"
         android:textAlignment="center"
         android:textColor="#FFEA00"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView14"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintEnd_toEndOf="@+id/txtCredit3"
+        app:layout_constraintStart_toStartOf="@+id/txtCredit3"
+        app:layout_constraintTop_toBottomOf="@+id/txtCredit3" />
 
     <Button
         android:id="@+id/btnMua3"
@@ -159,8 +159,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toTopOf="@+id/textView14" />
+        app:layout_constraintStart_toEndOf="@+id/txtCredit3"
+        app:layout_constraintTop_toTopOf="@+id/txtCredit3"
+        android:onClick="MuaCredit3"/>
 
     <Button
         android:id="@+id/btnMua4"
@@ -173,8 +174,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toTopOf="@+id/textView15" />
+        app:layout_constraintStart_toEndOf="@+id/txtCredit4"
+        app:layout_constraintTop_toTopOf="@+id/txtCredit4"
+        android:onClick="MuaCredit4"/>
 
     <Button
         android:id="@+id/btnTroVe"
@@ -191,7 +193,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/txtCredit4"
         android:onClick="QuayVe"
         />
 

@@ -74,7 +74,7 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
 
         try {
             JSONObject jsonObject = new JSONObject(data);
-            JSONArray itemArray = jsonObject.getJSONArray("dsLinhVuc");
+            JSONArray itemArray = jsonObject.getJSONArray("data");
             btnLinhVuc1.setText(itemArray.getJSONObject(0).getString("ten_linh_vuc"));
             btnLinhVuc2.setText(itemArray.getJSONObject(1).getString("ten_linh_vuc"));
             btnLinhVuc3.setText(itemArray.getJSONObject(2).getString("ten_linh_vuc"));

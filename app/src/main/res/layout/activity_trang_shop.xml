@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".TrangShop">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".6" />
+
     <ImageView
         android:id="@+id/imvLoGo"
         android:layout_width="0dp"
@@ -20,14 +27,15 @@
         android:id="@+id/txtTenDangNhap_Shop"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="150dp"
+        android:layout_marginEnd="8dp"
         android:background="#2979FF"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +54,7 @@
         android:id="@+id/txtCredit_TL"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="#FF6242"
         android:text="2000"
@@ -55,147 +63,101 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imgCredit_Shop"
-        app:layout_constraintStart_toEndOf="@+id/txtTenDangNhap_Shop"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/imgCredit_Shop" />
 
     <TextView
         android:id="@+id/txtCredit1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="200dp"
-        android:background="#A88935"
-        android:textAlignment="center"
-        android:textColor="#FFEA00"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/style_creadit_text"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imvLoGo" />
 
     <Button
         android:id="@+id/btnMua1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="#1DE9B6"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:onClick="MuaCredit1"
         android:text="Mua Ngay"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtCredit1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtCredit1"
-        app:layout_constraintTop_toTopOf="@+id/txtCredit1"
-        android:onClick="MuaCredit1"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        style="@style/style_button_muacredit" />
 
     <TextView
         android:id="@+id/txtCredit2"
+        style="@style/style_creadit_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="#A88935"
-        android:textAlignment="center"
-        android:textColor="#FFEA00"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/txtCredit1"
         app:layout_constraintStart_toStartOf="@+id/txtCredit1"
         app:layout_constraintTop_toBottomOf="@+id/txtCredit1" />
 
-    <Button
-        android:id="@+id/btnMua2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="#1DE9B6"
-        android:text="Mua Ngay"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtCredit2"
-        app:layout_constraintTop_toTopOf="@+id/txtCredit2"
-        android:onClick="MuaCredit2"
-        />
-
     <TextView
         android:id="@+id/txtCredit3"
+        style="@style/style_creadit_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="#A88935"
-        android:textAlignment="center"
-        android:textColor="#FFEA00"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/txtCredit2"
         app:layout_constraintStart_toStartOf="@+id/txtCredit2"
-        app:layout_constraintTop_toBottomOf="@+id/txtCredit2"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/txtCredit2" />
 
     <TextView
         android:id="@+id/txtCredit4"
+        style="@style/style_creadit_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="#A88935"
-        android:textAlignment="center"
-        android:textColor="#FFEA00"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/txtCredit3"
         app:layout_constraintStart_toStartOf="@+id/txtCredit3"
         app:layout_constraintTop_toBottomOf="@+id/txtCredit3" />
 
     <Button
-        android:id="@+id/btnMua3"
+        android:id="@+id/btnMua2"
+        style="@style/style_button_muacredit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="#1DE9B6"
-        android:text="Mua Ngay"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtCredit3"
-        app:layout_constraintTop_toTopOf="@+id/txtCredit3"
-        android:onClick="MuaCredit3"/>
+        android:text="MUA NGAY"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtCredit2"
+        app:layout_constraintEnd_toEndOf="@+id/btnMua1"
+        app:layout_constraintStart_toStartOf="@+id/btnMua1" />
+
+    <Button
+        android:id="@+id/btnMua3"
+        style="@style/style_button_muacredit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="MUA NGAY"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtCredit3"
+        app:layout_constraintEnd_toEndOf="@+id/btnMua2"
+        app:layout_constraintStart_toStartOf="@+id/btnMua2" />
 
     <Button
         android:id="@+id/btnMua4"
+        style="@style/style_button_muacredit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="#1DE9B6"
-        android:text="Mua Ngay"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtCredit4"
-        app:layout_constraintTop_toTopOf="@+id/txtCredit4"
-        android:onClick="MuaCredit4"/>
+        android:text="MUA NGAY"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtCredit4"
+        app:layout_constraintEnd_toEndOf="@+id/btnMua3"
+        app:layout_constraintStart_toStartOf="@+id/btnMua3" />
 
     <Button
         android:id="@+id/btnTroVe"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
         android:background="#FF9100"
-        android:text="Quay Về"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:text="QUAY VỀ"
+        android:textColor="#FFEA00"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnMua4"
+        app:layout_constraintStart_toStartOf="@+id/txtCredit4"
         app:layout_constraintTop_toBottomOf="@+id/txtCredit4"
-        android:onClick="QuayVe"
-        />
+        android:onClick="QuayVe"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import androidx.loader.content.Loader;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -67,13 +68,14 @@ public class TrangShop extends AppCompatActivity implements LoaderManager.Loader
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        Log.d("credit",data);
         try {
             JSONObject jsonObject = new JSONObject(data);
             JSONArray itemArray = jsonObject.getJSONArray("data");
-            txtCredit1.setText(itemArray.getJSONObject(0).getString("ten_goi"));
-            txtCredit2.setText(itemArray.getJSONObject(1).getString("ten_goi"));
-            txtCredit3.setText(itemArray.getJSONObject(2).getString("ten_goi"));
-            txtCredit4.setText(itemArray.getJSONObject(3).getString("ten_goi"));
+            txtCredit1.setText(itemArray.getJSONObject(0).getString("Ten_goi"));
+            txtCredit2.setText(itemArray.getJSONObject(1).getString("Ten_goi"));
+            txtCredit3.setText(itemArray.getJSONObject(2).getString("Ten_goi"));
+            txtCredit4.setText(itemArray.getJSONObject(3).getString("Ten_goi"));
         } catch (JSONException e){
             e.printStackTrace();
         }

@@ -20,7 +20,8 @@ import org.json.JSONObject;
 public class TrangShop extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>{
 
     private Button btnTroVe,btnMua1,btnMua2,btnMua3,btnMua4;
-    private TextView txtCredit1,txtCredit2,txtCredit3,txtCredit4;
+    private TextView txtCredit1,txtCredit2,txtCredit3,txtCredit4,txtCredit_TL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class TrangShop extends AppCompatActivity implements LoaderManager.Loader
         txtCredit2=findViewById(R.id.txtCredit2);
         txtCredit3=findViewById(R.id.txtCredit3);
         txtCredit4=findViewById(R.id.txtCredit4);
+        txtCredit_TL=findViewById(R.id.txtCredit_TL);
 
         if(getSupportLoaderManager().getLoader(0)!=null)
         {

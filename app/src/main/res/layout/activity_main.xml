@@ -16,9 +16,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/edtMatKhau"
+        app:layout_constraintEnd_toEndOf="@+id/txtMatKhau"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtMatKhau"
+        app:layout_constraintStart_toStartOf="@+id/txtMatKhau"
         app:layout_constraintTop_toBottomOf="@+id/btnDangNhap"
         android:onClick="QuenMatKhau"
         />
@@ -33,9 +33,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/edtMatKhau"
+        app:layout_constraintEnd_toEndOf="@+id/txtMatKhau"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtMatKhau"
+        app:layout_constraintStart_toStartOf="@+id/txtMatKhau"
         app:layout_constraintTop_toBottomOf="@+id/btnQuenMatKhau"
         android:onClick="DangKy"
         />
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imvLoGo" />
 
     <EditText
-        android:id="@+id/edtMatKhau"
+        android:id="@+id/txtMatKhau"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -92,9 +92,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/edtMatKhau"
-        app:layout_constraintStart_toStartOf="@+id/edtMatKhau"
-        app:layout_constraintTop_toBottomOf="@+id/edtMatKhau"
+        app:layout_constraintEnd_toEndOf="@+id/txtMatKhau"
+        app:layout_constraintStart_toStartOf="@+id/txtMatKhau"
+        app:layout_constraintTop_toBottomOf="@+id/txtMatKhau"
         android:onClick="DangNhap"
         />
 

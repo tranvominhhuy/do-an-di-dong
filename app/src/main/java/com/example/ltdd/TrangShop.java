@@ -7,6 +7,7 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +23,12 @@ public class TrangShop extends AppCompatActivity implements LoaderManager.Loader
     private Button btnTroVe,btnMua1,btnMua2,btnMua3,btnMua4;
     private TextView txtCredit1,txtCredit2,txtCredit3,txtCredit4,txtCredit_TL;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private String token;
+
+    private final static String FILE_NAME_SHAREREF = "com.example.ltdd";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +43,15 @@ public class TrangShop extends AppCompatActivity implements LoaderManager.Loader
         txtCredit3=findViewById(R.id.txtCredit3);
         txtCredit4=findViewById(R.id.txtCredit4);
         txtCredit_TL=findViewById(R.id.txtCredit_TL);
+
+        sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        token= sharedPreferences.getString("TOKEN","");
+        Log.d("TOKEN",token);
+        if (token==""){
+            finish();
+        }
 
         if(getSupportLoaderManager().getLoader(0)!=null)
         {
@@ -65,7 +81,7 @@ public class TrangShop extends AppCompatActivity implements LoaderManager.Loader
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new GoiCreditLoader(this);
+        return new GoiCreditLoader(this,token);
     }
 
     @Override

@@ -7,7 +7,9 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,12 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
 
     private Button btnLinhVuc1,btnLinhVuc2,btnLinhVuc3,btnLinhVuc4;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private String token;
+
+    private final static String FILE_NAME_SHAREREF = "com.example.ltdd";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +42,23 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
 
         TextView textView = findViewById(R.id.txtTenDangNhap);
 
+        sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        token= sharedPreferences.getString("TOKEN","");
+        Log.d("TOKEN",token);
+        if (token==""){
+            finish();
+        }
+
         if(getSupportLoaderManager().getLoader(0)!=null)
         {
             getSupportLoaderManager().initLoader(0,null,this);
 
         }
         getSupportLoaderManager().restartLoader(0,null,this);
+
+
 
     }
 
@@ -66,7 +85,7 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new LinhVucLoader(this);
+        return new LinhVucLoader(this,token);
     }
 
     @Override
@@ -74,6 +93,7 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
 
         try {
             JSONObject jsonObject = new JSONObject(data);
+            Log.d("linhvuc",data);
             JSONArray itemArray = jsonObject.getJSONArray("data");
             btnLinhVuc1.setText(itemArray.getJSONObject(0).getString("ten_linh_vuc"));
             btnLinhVuc2.setText(itemArray.getJSONObject(1).getString("ten_linh_vuc"));

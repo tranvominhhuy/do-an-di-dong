@@ -141,6 +141,46 @@ public class NetWorkUtils {
         }
         return builder.toString();
     }
+
+    public static String doRequest(String uri, String method, HashMap<String, String> params, String token) {
+        HttpURLConnection urlConnection = null;
+        String jsonString = null;
+        Uri.Builder builder = Uri.parse(BASE_URL + uri).buildUpon();
+
+        if (params != null) {
+            for (Map.Entry<String, String> pa : params.entrySet()) {
+                builder.appendQueryParameter(pa.getKey(), pa.getValue());
+            }
+        }
+
+        Uri builtURI = builder.build();
+
+        try {
+
+            URL requestURL = new URL(builtURI.toString());
+            urlConnection = (HttpURLConnection) requestURL.openConnection();
+            urlConnection.setRequestMethod(method);
+
+            if (token != null) {
+                urlConnection.setRequestProperty("Authorization", token);
+            }
+
+            urlConnection.connect();
+
+            // Get the InputStream.
+            InputStream inputStream = urlConnection.getInputStream();
+            jsonString = convertToString(inputStream);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+        Log.d(LOG_TAG, jsonString);
+        return jsonString;
+    }
     public static String postRequest(String uri, HashMap<String, String> postDataParams) {
         String jsonString = null;
         URL url;
@@ -193,4 +233,5 @@ public class NetWorkUtils {
         // hinh_anh=abcedffsf&ten_hinh=abc.jpg
         return result.toString();
     }
+
 }

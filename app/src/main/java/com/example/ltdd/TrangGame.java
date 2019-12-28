@@ -24,6 +24,7 @@ import java.util.Timer;
 public class TrangGame extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private Button btnLinhVuc1,btnLinhVuc2,btnLinhVuc3,btnLinhVuc4;
+    private int idLV1, idLV2, idLV3, idLV4;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -64,21 +65,25 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
 
     public void ChonLinhVuc1(View view) {
         Intent intent = new Intent(this,TrangTraLoiCauHoi.class);
+        intent.putExtra("linh_vuc_id",idLV1);
         startActivity(intent);
     }
 
     public void ChonLinhVuc2(View view) {
         Intent intent = new Intent(this,TrangTraLoiCauHoi.class);
+        intent.putExtra("linh_vuc_id",idLV2);
         startActivity(intent);
     }
 
     public void ChonLinhVuc3(View view) {
         Intent intent = new Intent(this,TrangTraLoiCauHoi.class);
+        intent.putExtra("linh_vuc_id",idLV3);
         startActivity(intent);
     }
 
     public void ChonLinhVuc4(View view) {
         Intent intent = new Intent(this,TrangTraLoiCauHoi.class);
+        intent.putExtra("linh_vuc_id",idLV4);
         startActivity(intent);
     }
 
@@ -96,9 +101,13 @@ public class TrangGame extends AppCompatActivity implements LoaderManager.Loader
             Log.d("linhvuc",data);
             JSONArray itemArray = jsonObject.getJSONArray("data");
             btnLinhVuc1.setText(itemArray.getJSONObject(0).getString("ten_linh_vuc"));
+            idLV1 = itemArray.getJSONObject(0).getInt("id");
             btnLinhVuc2.setText(itemArray.getJSONObject(1).getString("ten_linh_vuc"));
+            idLV2 = itemArray.getJSONObject(1).getInt("id");
             btnLinhVuc3.setText(itemArray.getJSONObject(2).getString("ten_linh_vuc"));
+            idLV3 = itemArray.getJSONObject(2).getInt("id");
             btnLinhVuc4.setText(itemArray.getJSONObject(3).getString("ten_linh_vuc"));
+            idLV4 = itemArray.getJSONObject(3).getInt("id");
         } catch (JSONException e){
             e.printStackTrace();
         }

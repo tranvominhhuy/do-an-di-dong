@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -32,6 +33,12 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
     private boolean isLastPage = false;
     private boolean isLoading = false;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private String token;
+
+    private final static String FILE_NAME_SHAREREF = "com.example.ltdd";
+
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -41,6 +48,14 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
         this.bangXepHangAdapter = new BangXepHangAdapter(mListNguoiChoi,this);
         this.mRecyclerView.setAdapter(bangXepHangAdapter);
         this.mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        token= sharedPreferences.getString("TOKEN","");
+        Log.d("TOKEN",token);
+        if (token==""){
+            finish();
+        }
         loadData(null);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -55,6 +70,7 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
                 int visibleItemCount = layoutManager.getChildCount();
                 int totalItemCount = layoutManager.getItemCount();
                 int firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
+
 
                 if(!isLoading && !isLastPage){
                     if((visibleItemCount + firstVisibleItemPosition)>= totalItemCount
@@ -78,14 +94,18 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
     private void loadData(@Nullable Bundle data){
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo= null;
+
         if(connMgr !=null){
             networkInfo = connMgr.getActiveNetworkInfo();
         }
+
         if(networkInfo!=null && networkInfo.isConnected()){
+
             if(getSupportLoaderManager().getLoader(0)!=null){
                 getSupportLoaderManager().restartLoader(0,data,this);
             }
             getSupportLoaderManager().initLoader(0,data,this);
+
 
         } else {
             taoThongBao("Không thể kết nối Internet").show();
@@ -103,6 +123,7 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
             }
         });
         return builder.create();
+        // nghiên cứu đi bên t mới có khoảng 3 4 dòng dữ lieeuju nên chứ tesest load 25 dòng
     }
 
     @NonNull
@@ -114,7 +135,7 @@ public class TrangBangXepHang extends AppCompatActivity  implements LoaderManage
             page= args.getInt("page");
             limit = args.getInt("limit");
         }
-        return new BangXepHangLoader(this,page,limit);
+        return new BangXepHangLoader(this,token);
     }
 
     @Override

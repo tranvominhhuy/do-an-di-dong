@@ -31,7 +31,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
 
     private final static String FILE_NAME_SHAREREF = "com.example.ltdd";
 
-    private TextView txtDe_TL;
+    private TextView txtDe_TL,txtSo_TL;
     private Button btnDapAnA_TL,btnDapAnB_TL,btnDapAnC_TL,btnDapAnD_TL;
     private int idLinhVuc;
     private String dapAn;
@@ -52,6 +52,8 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         btnDapAnC_TL= findViewById(R.id.btnDapAnC_TL);
         btnDapAnD_TL= findViewById(R.id.btnDapAnD_TL);
         txtDe_TL= findViewById(R.id.txtDe_TL);
+        txtSo_TL= findViewById(R.id.txtSo_TL);
+
         sqLiteHelper = new SQLiteHelper(this);
 
         sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF,MODE_PRIVATE);
@@ -132,7 +134,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
     {
         ArrayList<CauHoi> mListCauHoi = sqLiteHelper.layDanhSach(idLinhVuc);
         if(i < mListCauHoi.size()) {
-            //txtSttCauHoi.setText("Câu hỏi số "+ stt + ": ");
+            txtSo_TL.setText( stt + " ");
             txtDe_TL.setText(mListCauHoi.get(i).getNoi_dung());
             btnDapAnA_TL.setText(mListCauHoi.get(i).getPhuong_an_a());
             btnDapAnB_TL.setText(mListCauHoi.get(i).getPhuong_an_b());

@@ -194,6 +194,10 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
             btnDapAnC_TL.setText(mListCauHoi.get(i).getPhuong_an_c());
             btnDapAnD_TL.setText(mListCauHoi.get(i).getPhuong_an_d());
             dapAn = mListCauHoi.get(i).getDap_an();
+            if(i==0){
+                position++;
+                this.stt++;
+            }
         }
         else
         {

@@ -13,8 +13,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -22,8 +24,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
+
+    private static final long START_TIME_IN_MILLIS= 30000;
+    private TextView txtThoiGian;
+    private ProgressBar mProgressBar;
+    private CountDownTimer mCountDownTimer;
+    private boolean mTimerRunning;
+    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -31,7 +41,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
 
     private final static String FILE_NAME_SHAREREF = "com.example.ltdd";
 
-    private TextView txtDe_TL,txtSo_TL;
+    private TextView txtDe_TL,txtSo_TL,txt0_TL,txtTim;
     private Button btnDapAnA_TL,btnDapAnB_TL,btnDapAnC_TL,btnDapAnD_TL;
     private int idLinhVuc;
     private String dapAn;
@@ -53,6 +63,13 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         btnDapAnD_TL= findViewById(R.id.btnDapAnD_TL);
         txtDe_TL= findViewById(R.id.txtDe_TL);
         txtSo_TL= findViewById(R.id.txtSo_TL);
+        txt0_TL= findViewById(R.id.txt0_TL);
+        txtTim=findViewById(R.id.txtTim);
+
+        txtThoiGian = findViewById(R.id.txtThoiGian);
+        mProgressBar = findViewById(R.id.ThoiGian_TL);
+        mProgressBar.setMax((int) START_TIME_IN_MILLIS / 1000);
+        mProgressBar.setProgress((int) START_TIME_IN_MILLIS / 1000);
 
         sqLiteHelper = new SQLiteHelper(this);
 
@@ -85,12 +102,48 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
                 btnDapAnB_TL.setEnabled(true);
                 btnDapAnC_TL.setEnabled(true);
                 btnDapAnD_TL.setEnabled(true);
-                //mTimeTraLoiCauHoi.start();
+                mTimeTraLoiCauHoi.start();
             }
         });
         builder.create().show();
+    }
+    CountDownTimer   mTimeTraLoiCauHoi = new CountDownTimer(mTimeLeftInMillis, 1000) {
+        @Override
+        public void onTick(long millisUntilFinished) {
+            mTimeLeftInMillis = millisUntilFinished;
+            mProgressBar.setProgress((int) (millisUntilFinished / 1000));
+            updateCountDownText();
+        }
+        @Override
+        public void onFinish() {
+            taoThongBao("Thông báo","Hết giờ rồi!").show();
+        }
+    };
 
+    private void updateCountDownText(){
+        int minutes = (int) (mTimeLeftInMillis / 1000 ) / 60;
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        txtThoiGian.setText(timeLeftFormatted); }
 
+    //    public void Reset(View view) {
+//        mCountDownTimer.cancel();
+//        mTimerRunning = false;
+//        mTimeLeftInMillis = START_TIME_IN_MILLIS;
+//        Intent intent = new Intent (this,LinhVucActivity.class);
+//        startActivity(intent);
+    // }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            mCountDownTimer.cancel();
+            mTimerRunning = false;
+            mTimeLeftInMillis = START_TIME_IN_MILLIS;
+            Intent intent = new Intent (this,TrangGame.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @NonNull
@@ -145,7 +198,8 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         else
         {
             taoThongBao("Thông báo","Trò chơi đã kết thúc").show();
-            //mTimeTraLoiCauHoi.cancel();
+
+            mTimeTraLoiCauHoi.cancel();
         }
     }
 
@@ -155,9 +209,14 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                TrangChu();
             }
         });
         return builder.create();
+    }
+    public void TrangChu(){
+        Intent intent= new Intent(this,TrangChu.class);
+        startActivity(intent);
     }
     public int idDapAn (String dapAn)
     {
@@ -181,13 +240,13 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
 
     public void traLoiCauHoi(View view) {
         EnableBtnPhuongAn(false);
-        //mTimeTraLoiCauHoi.cancel();
+        mTimeTraLoiCauHoi.cancel();
         if(view.getId() == idDapAn(dapAn))
         {
             view.setBackgroundResource(R.drawable.tra_loi_dung);
-//            int diem = Integer.parseInt(txtDiem.getText().toString());
-//            diem += DIEM;
-//            txtDiem.setText(diem+"");
+            int diem = Integer.parseInt(txt0_TL.getText().toString());
+            diem += DIEM;
+            txt0_TL.setText(diem+"");
         }
         else {
             if (btnDapAnA_TL.getId() == idDapAn(dapAn)) {
@@ -203,7 +262,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
                 btnDapAnD_TL.setBackgroundResource(R.drawable.tra_loi_dung);
                 view.setBackgroundResource(R.drawable.tra_loi_sai);
             }
-            //txtSoMang.setText(Integer.parseInt(txtSoMang.getText().toString()) - 1 +"");
+            txtTim.setText(Integer.parseInt(txtTim.getText().toString()) - 1 +"");
 
         }
         CountDownTimer countDownTimer = new CountDownTimer(3000,1000) {
@@ -215,7 +274,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
             public void onFinish() {
                 Reset();
                 hienCauHoi(position++,stt++);
-                //mTimeTraLoiCauHoi.start();
+                mTimeTraLoiCauHoi.start();
             }
         }.start();
     }

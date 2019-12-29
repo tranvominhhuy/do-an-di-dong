@@ -1,7 +1,9 @@
 package com.example.ltdd;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -64,10 +66,26 @@ public class TrangChu extends AppCompatActivity {
     }
 
     public void DangXuat(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this,MainActivity.class);
+        taoThongBao("Thông báo","Bạn chắc chắn đăng xuất tài khoản?").show();
+        //startActivity(intent);
         editor.clear();
         editor.commit();
-        finish();
+       // finish();
+    }
+    public AlertDialog taoThongBao(String tieuDe, String thongBao) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(thongBao).setTitle(tieuDe);
+        builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TrangChu();
+            }
+        });
+        return builder.create();
+    }
+    public void TrangChu(){
+        Intent intent= new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

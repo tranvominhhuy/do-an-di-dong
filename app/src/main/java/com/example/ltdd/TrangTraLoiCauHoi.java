@@ -219,7 +219,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         return builder.create();
     }
     public void TrangChu(){
-        Intent intent= new Intent(this,TrangChu.class);
+        Intent intent= new Intent(this,TrangGame.class);
         startActivity(intent);
     }
     public int idDapAn (String dapAn)

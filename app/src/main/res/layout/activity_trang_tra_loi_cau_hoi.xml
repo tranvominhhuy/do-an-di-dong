@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nen1"
     tools:context=".TrangTraLoiCauHoi">
 
     <ImageView
-        android:id="@+id/imgTim1"
+        android:id="@+id/imgTim_CH"
         android:layout_width="50dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtTim"
-        app:layout_constraintStart_toEndOf="@+id/txtTim"
-        app:layout_constraintTop_toTopOf="@+id/txtTim"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTim_LV"
+        app:layout_constraintStart_toEndOf="@+id/txtTim_LV"
+        app:layout_constraintTop_toTopOf="@+id/txtTim_LV"
         app:srcCompat="@drawable/tim" />
 
     <TextView
@@ -174,7 +175,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imgCredit_TL"
-        app:layout_constraintStart_toEndOf="@+id/imgTim1"
+        app:layout_constraintStart_toEndOf="@+id/imgTim_CH"
         app:layout_constraintTop_toTopOf="@+id/imgCredit_TL" />
 
     <TextView
@@ -202,7 +203,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnDapAnD_TL" />
 
     <TextView
-        android:id="@+id/txtTim"
+        android:id="@+id/txtTim_LV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -226,8 +227,8 @@
         android:textColor="#BA000000"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/txtTim"
-        app:layout_constraintTop_toBottomOf="@+id/txtTim" />
+        app:layout_constraintStart_toStartOf="@+id/txtTim_LV"
+        app:layout_constraintTop_toBottomOf="@+id/txtTim_LV" />
 
     <TextView
         android:id="@+id/txtThoiGian"

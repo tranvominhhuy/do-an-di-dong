@@ -4,47 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nen1"
     tools:context=".TrangGame">
 
     <ImageView
-        android:id="@+id/imgTim1"
+        android:id="@+id/imgTim_CH"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tim" />
-
-    <ImageView
-        android:id="@+id/imgTim2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imgTim1"
-        app:layout_constraintTop_toTopOf="@+id/imgTim1"
-        app:srcCompat="@drawable/tim" />
-
-    <ImageView
-        android:id="@+id/imgTim3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imgTim2"
-        app:layout_constraintTop_toTopOf="@+id/imgTim2"
-        app:srcCompat="@drawable/tim" />
-
-    <ImageView
-        android:id="@+id/imgTim4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imgTim3"
-        app:layout_constraintTop_toTopOf="@+id/imgTim3"
-        app:srcCompat="@drawable/tim" />
-
-    <ImageView
-        android:id="@+id/imgTim5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imgTim4"
-        app:layout_constraintTop_toTopOf="@+id/imgTim4"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTim_LV"
+        app:layout_constraintStart_toEndOf="@+id/txtTim_LV"
+        app:layout_constraintTop_toTopOf="@+id/txtTim_LV"
         app:srcCompat="@drawable/tim" />
 
     <TextView
@@ -52,14 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="Điểm:"
         android:textAlignment="center"
         android:textColor="#E91E63"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgTim3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTim_LV" />
 
     <TextView
         android:id="@+id/txt0_Game"
@@ -200,6 +169,7 @@
         android:id="@+id/txtCredit_TL"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginEnd="8dp"
         android:background="#FF6242"
         android:text="2000"
@@ -208,7 +178,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imgCredit_TL"
-        app:layout_constraintStart_toEndOf="@+id/imgTim5"
+        app:layout_constraintStart_toEndOf="@+id/imgTim_CH"
         app:layout_constraintTop_toTopOf="@+id/imgCredit_TL" />
 
     <TextView
@@ -224,5 +194,21 @@
         app:layout_constraintHorizontal_bias="0.755"
         app:layout_constraintStart_toStartOf="@+id/txtCredit_TL"
         app:layout_constraintTop_toBottomOf="@+id/txtCredit_TL" />
+
+    <TextView
+        android:id="@+id/txtTim_LV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#76FF03"
+        android:padding="16dp"
+        android:text="5"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

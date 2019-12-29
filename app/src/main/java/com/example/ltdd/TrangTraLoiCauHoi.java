@@ -64,7 +64,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         txtDe_TL= findViewById(R.id.txtDe_TL);
         txtSo_TL= findViewById(R.id.txtSo_TL);
         txt0_TL= findViewById(R.id.txt0_TL);
-        txtTim=findViewById(R.id.txtTim);
+        txtTim=findViewById(R.id.txtTim_LV);
 
         txtThoiGian = findViewById(R.id.txtThoiGian);
         mProgressBar = findViewById(R.id.ThoiGian_TL);

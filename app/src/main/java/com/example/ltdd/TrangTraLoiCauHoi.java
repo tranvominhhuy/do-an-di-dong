@@ -219,7 +219,7 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
         return builder.create();
     }
     public void TrangChu(){
-        Intent intent= new Intent(this,TrangGame.class);
+        Intent intent= new Intent(this,TrangChu.class);
         startActivity(intent);
     }
     public int idDapAn (String dapAn)
@@ -267,6 +267,10 @@ public class TrangTraLoiCauHoi extends AppCompatActivity implements LoaderManage
                 view.setBackgroundResource(R.drawable.tra_loi_sai);
             }
             txtTim.setText(Integer.parseInt(txtTim.getText().toString()) - 1 +"");
+            int tim=Integer.parseInt(txtTim.getText().toString());
+            if(tim==0){
+                taoThongBao("Thông báo","Trò chơi đã kết thúc").show();
+            }
 
         }
         CountDownTimer countDownTimer = new CountDownTimer(3000,1000) {

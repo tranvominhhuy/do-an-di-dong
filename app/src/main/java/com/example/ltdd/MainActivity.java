@@ -40,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtTenDangNhap,txtMatKhau;
 
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String token= sharedPreferences.getString("TOKEN","");
+        Log.d("TOKEN",token);
+        if (token!=""){
+            TrangChu();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -34,6 +34,7 @@ public class TrangDangKy extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
         txtMatKhau = findViewById(R.id.txtmatKhau_DK);
         txtXacNhanMatKhau = findViewById(R.id.txtXacNhanMatKhau);
+        txtTenDangNhap.requestFocus();
 
         sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF,MODE_PRIVATE);
         editor = sharedPreferences.edit();

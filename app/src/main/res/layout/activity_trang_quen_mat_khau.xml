@@ -7,61 +7,161 @@
     android:background="@drawable/nen1"
     tools:context=".TrangQuenMatKhau">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDoiMK"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+        <EditText
+            android:id="@+id/txtMaXacNhan"
+            style="@style/edit_text_quen_mk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Nhập mã xác nhận"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtMatKhauMoi"
+            style="@style/edit_text_quen_mk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Mật khẩu mới"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtMaXacNhan"
+            app:layout_constraintHorizontal_bias="0.678"
+            app:layout_constraintStart_toStartOf="@+id/txtMaXacNhan"
+            app:layout_constraintTop_toBottomOf="@+id/txtMaXacNhan" />
+
+        <EditText
+            android:id="@+id/txtXacNhanMKMoi"
+            style="@style/edit_text_quen_mk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Xác nhận mật khẩu"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtMatKhauMoi"
+            app:layout_constraintStart_toStartOf="@+id/txtMatKhauMoi"
+            app:layout_constraintTop_toBottomOf="@+id/txtMatKhauMoi" />
+
+        <Button
+            android:id="@+id/btnThayDoiMK"
+            style="@style/style_btn_quen_mk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Đổi mật khẩu"
+            app:layout_constraintEnd_toEndOf="@+id/txtXacNhanMKMoi"
+            app:layout_constraintStart_toStartOf="@+id/txtXacNhanMKMoi"
+            app:layout_constraintTop_toBottomOf="@+id/txtXacNhanMKMoi"
+            android:onClick="lamMoiMatKhau"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSendEmail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btnSendEmail"
+            style="@style/style_btn_quen_mk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Gửi email"
+            android:onClick="guiEmail"
+            app:layout_constraintEnd_toEndOf="@+id/txtEmailQuenMK"
+            app:layout_constraintStart_toStartOf="@+id/txtEmailQuenMK"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmailQuenMK" />
+
+        <EditText
+            android:id="@+id/txtEmailQuenMK"
+            style="@style/edit_text_quen_mk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Nhập email..."
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/imvLoGo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/txtTenDangNhap_DK"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_txt"
-        android:ems="10"
-        android:hint="Tên Đăng Nhập"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imvLoGo" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="238dp"
+        app:layout_constraintGuide_percent=".25" />
 
-    <EditText
-        android:id="@+id/txtEmail"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_txt"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtTenDangNhap_DK"
-        app:layout_constraintStart_toStartOf="@+id/txtTenDangNhap_DK"
-        app:layout_constraintTop_toBottomOf="@+id/txtTenDangNhap_DK" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="337dp"
+        app:layout_constraintGuide_percent="0.45" />
 
-    <Button
-        android:id="@+id/btnLayLaiMatKhau"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#00BCD4"
-        android:onClick="LayLaiMatKhau"
-        android:text="@string/btnLayLaiMatKhau"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/txtEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="66dp"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="334dp"
+        app:layout_constraintGuide_percent=".9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="421dp"
+        app:layout_constraintGuide_percent="0.6" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

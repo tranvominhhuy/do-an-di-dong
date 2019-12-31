@@ -20,6 +20,7 @@ public class TrangQuenMatKhau extends AppCompatActivity {
     private EditText txtEmailQuenMK, txtMaXacNhan, txtMatKhauMoi, txtXacNhanMKMoi;
     private View layoutGuiEmail, layoutDoiMK;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,9 +76,14 @@ public class TrangQuenMatKhau extends AppCompatActivity {
 
     public void lamMoiMatKhau(View view) {
         String maXacNhan = txtMaXacNhan.getText().toString();
-        String matKhau = txtMatKhauMoi.getText().toString();
         String email = txtEmailQuenMK.getText().toString();
-        Log.d("click", "click");
+        String matKhau = txtMatKhauMoi.getText().toString();
+        String xacNhanMatKhau = txtXacNhanMKMoi.getText().toString();
+        if (!matKhau.equals(xacNhanMatKhau)) {
+            taoThongBao("Lỗi", "Mật khẩu và mật khẩu xác nhận không giống nhau").show();
+            return;
+        }
+
         new LamMoiMatKhauLoader() {
             @Override
             protected void onPostExecute(String s) {

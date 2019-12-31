@@ -27,7 +27,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Nhập mã xác nhận"
-            android:inputType="textPersonName"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Mật khẩu mới"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textPassword"
             app:layout_constraintEnd_toEndOf="@+id/txtMaXacNhan"
             app:layout_constraintHorizontal_bias="0.678"
             app:layout_constraintStart_toStartOf="@+id/txtMaXacNhan"
@@ -54,7 +54,7 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Xác nhận mật khẩu"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textPassword"
             app:layout_constraintEnd_toEndOf="@+id/txtMatKhauMoi"
             app:layout_constraintStart_toStartOf="@+id/txtMatKhauMoi"
             app:layout_constraintTop_toBottomOf="@+id/txtMatKhauMoi" />

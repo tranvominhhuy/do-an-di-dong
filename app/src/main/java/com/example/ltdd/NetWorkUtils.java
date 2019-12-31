@@ -21,8 +21,8 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class NetWorkUtils {
     private static final String LOG_TAG = NetWorkUtils.class.getSimpleName();
-    // private static final String BASE_URL =  "http://10.0.3.2:8000/api/"; // Genymotion
-    private static final String BASE_URL =  "http://10.0.2.2:8000/api/"; // AVD
+     private static final String BASE_URL =  "http://10.0.3.2:8000/api/"; // Genymotion
+//    private static final String BASE_URL =  "http://10.0.2.2:8000/api/"; // AVD
 
     static String getJSONData(String uri, String method, HashMap<String,String> params) {
         HttpURLConnection urlConnection = null;
